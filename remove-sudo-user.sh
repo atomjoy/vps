@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Variables
-USER=username
+USER=debian
 
 # Remove user from sudo
 sudo gpasswd -d $USER sudo
