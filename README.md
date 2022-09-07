@@ -33,7 +33,7 @@ Logowanie tylko z kluczami ssh, bez hasła i logowania na root.
 sudo bash ssh.sh
 ```
 
-## Uruchom skrypty
+## Uruchom skrypty jako root
 Nie zapomij zmienić ustawienia w każdym skrypcie (variables) !!!
 
 1. sudo bash apt-https.sh
@@ -44,7 +44,7 @@ Nie zapomij zmienić ustawienia w każdym skrypcie (variables) !!!
 6. sudo bash nginx-vhost.sh
 7. sudo bash postfix.sh
 8. sudo bash mariadb.sh
-9. sudo bash remove-sudo-user.sh
+9. sudo bash remove-sudo-default-user.sh
 
 ## Usuwanie użytkownika debian z sudo
 ```bash
