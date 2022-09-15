@@ -12,7 +12,7 @@ SSL_WITH_WWW=false
 # File max upload size
 MAX_UPLOAD_MB=100
 # Allow edit /var/www to user
-WWW_USER=debain
+WWW_USER="debain"
 
 # Don't change below
 
