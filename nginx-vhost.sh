@@ -37,9 +37,6 @@ server {
   location ^~ /.well-known/acme-challenge/ {
     default_type "text/plain";
   }
-  location = /.well-known/acme-challenge/ {
-    return 404;
-  }
   # Redirect ssl
   return 301 https://${TO_HOST}\$request_uri;
 }
