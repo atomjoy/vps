@@ -32,7 +32,7 @@ server {
   listen 80;
   listen [::]:80;
   server_name ${DOMAIN} www.${DOMAIN};
-  # Letsencrypt certbot
+  # Letsencrypt certbot webroot
   root /var/www/${DOMAIN}/public;  
   location ^~ /.well-known/acme-challenge/ {
     default_type "text/plain";
