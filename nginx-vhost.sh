@@ -32,6 +32,15 @@ server {
   listen 80;
   listen [::]:80;
   server_name ${DOMAIN} www.${DOMAIN};
+  # Letsencrypt certbot
+  root /var/www/${DOMAIN}/public;  
+  location ^~ /.well-known/acme-challenge/ {
+    default_type "text/plain";
+  }
+  location = /.well-known/acme-challenge/ {
+    return 404;
+  }
+  # Redirect ssl
   return 301 https://${TO_HOST}\$request_uri;
 }
 " > "/etc/nginx/sites-enabled/${DOMAIN}.conf"
@@ -104,6 +113,7 @@ server {
 
 # New dir
 sudo mkdir -p "/var/www/${DOMAIN}/public"
+sudo mkdir -p "/var/www/${DOMAIN}/public/.well-known/acme-challenge"
 
 # Add index page
 echo "Html Works ..." > "/var/www/${DOMAIN}/public/index.html"
