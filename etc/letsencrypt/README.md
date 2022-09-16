@@ -1,4 +1,4 @@
-# Nginx certyfikaty ssl letsencrypt and certbot
+# Nginx certyfikaty ssl letsencrypt i certbot
 
 ### Tworzenie certyfikatu ssl bez serwera http
 ```sh
