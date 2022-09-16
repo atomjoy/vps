@@ -4,7 +4,7 @@
 # Copy to:
 # /etc/pam.d/
 # Set permissions:
-# chmod +x /etc/pam.d/vps-ssh-login.sh
+# chmod +x /etc/pam.d/ssh-login.sh
 
 # Variables
 EMAIL=admin_email@gmail.com
