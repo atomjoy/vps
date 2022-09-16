@@ -6,9 +6,7 @@ Zmień koniecznie odbiorce i nadawcę wiadomości w pliku: **ssh-login.sh** i us
 sudo apt install mailutils postfix -y
 ```
 
-## Przykład 1
-
-### Dodaj do katalogu (opcja 1)
+### Dodaj do katalogu
 ```sh
 /etc/pam.d/ssh-login.sh
 ```
@@ -20,19 +18,10 @@ chown root:root /etc/pam.d/ssh-login.sh
 chmod +x /etc/pam.d/ssh-login.sh
 ```
 
-## Przykład 2
-
-### Dodaj do pliku /etc/pam.d/sshd
+### Dodaj na końcu pliku /etc/pam.d/sshd
 ```sh
 # Ssh login email
-session required pam_exec.so /root/scripts/ssh-login.sh
-```
-
-### Pozwól na wykonanie pliku
-```sh
-chmod 0700 /root/scripts/ssh-login.sh
-chown root:root /root/scripts/ssh-login.sh
-chmod +x /root/scripts/ssh-login.sh
+session required pam_exec.so /etc/pam.d/ssh-login.sh
 ```
 
 ## Do poczytania
