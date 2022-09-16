@@ -74,6 +74,8 @@ server {
   ssl_protocols TLSv1.2 TLSv1.3;
   ssl_ciphers HIGH:!aNULL:!MD5;  
   ssl_prefer_server_ciphers off;
+  ssl_stapling on;
+  ssl_stapling_verify on;
   add_header Strict-Transport-Security 'max-age=63072000; includeSubdomains; preload';
   add_header X-Frame-Options DENY;
   add_header X-Content-Type-Options nosniff;
