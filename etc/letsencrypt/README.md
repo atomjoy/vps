@@ -26,3 +26,9 @@ sudo service nginx restart
 sudo certbot revoke --noninteractive --cert-path /etc/letsencrypt/live/example.com/fullchain.pem
 sudo certbot delete --noninteractive --cert-name example.com
 ```
+
+
+### Generator ssl vhost
+```sh
+https://ssl-config.mozilla.org
+```
