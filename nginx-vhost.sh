@@ -68,10 +68,13 @@ server {
   error_log /var/log/nginx/${DOMAIN}.ssl.log error;
   ssl_certificate ${SSL_CERT};
   ssl_certificate_key ${SSL_KEY};
+  ssl_session_cache shared:nginx_SSL:10m;
+  ssl_session_timeout 1d;
+  ssl_session_tickets off;
   ssl_protocols TLSv1.2 TLSv1.3;
-  ssl_ciphers HIGH:!aNULL:!MD5;
-  ssl_prefer_server_ciphers on;
-  add_header Strict-Transport-Security 'max-age=44768000; includeSubdomains; preload;';
+  ssl_ciphers HIGH:!aNULL:!MD5;  
+  ssl_prefer_server_ciphers off;
+  add_header Strict-Transport-Security 'max-age=63072000; includeSubdomains; preload';
   add_header X-Frame-Options DENY;
   add_header X-Content-Type-Options nosniff;
   location / {
