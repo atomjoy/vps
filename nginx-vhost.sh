@@ -132,5 +132,8 @@ sudo chmod -R 2775 /etc/nginx/sites-enabled
 sudo chown -R "${WWW_USER}:www-data" /var/www
 sudo chmod -R 2775 /var/www
 
+# Certs
+sudo apt install ssl-cert
+
 # Restart
 sudo service nginx restart
