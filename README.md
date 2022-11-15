@@ -36,15 +36,16 @@ sudo bash ssh.sh
 ## Uruchom skrypty jako root
 Nie zapomij zmienić ustawienia w każdym skrypcie (variables) !!!
 
-1. sudo bash apt-https.sh
-2. sudo bash ufw.sh
-3. sudo bash php.sh
-4. sudo bash nginx.sh
-5. sudo bash certbot.sh
-6. sudo bash nginx-vhost.sh
-7. sudo bash postfix.sh
-8. sudo bash mariadb.sh
-9. sudo bash remove-sudo-default-user.sh
+1. sudo bash hostname.sh
+2. sudo bash apt-https.sh
+3. sudo bash ufw.sh
+4. sudo bash php.sh
+5. sudo bash nginx.sh
+6. sudo bash certbot.sh
+7. sudo bash nginx-vhost.sh
+8. sudo bash postfix.sh
+9. sudo bash mariadb.sh
+10. sudo bash remove-sudo-default-user.sh
 
 ## Usuwanie użytkownika debian z sudo
 ```bash
