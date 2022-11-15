@@ -9,7 +9,8 @@ VPS_HOST=hello
 VPS_FQDN_HOST=hello.example.com
 
 # Hostname
-sudo hostname ${VPS_FQDN_HOST}
+sudo hostname $VPS_FQDN_HOST
+echo $VPS_HOST > /etc/hostname
 
 # Hosts
 echo "" > /etc/hosts
