@@ -37,15 +37,18 @@ echo "postfix postfix/mailname string ${MAILNAME}" | debconf-set-selections
 echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections
 sudo apt install -y postfix
 
+# Hostname
+sudo hostname $VPS_HOST_FQDN
+
 # Hosts
 echo "" > /etc/hosts
-echo "127.0.0.1 ${MAILNAME} ${VPS_HOST} localhost" >> /etc/hosts
+echo "127.0.0.1 ${MAILNAME} ${VPS_HOST} ${VPS_HOST_FQDN} localhost" >> /etc/hosts
 echo "::1     localhost ip6-localhost ip6-loopback" >> /etc/hosts
 echo "ff02::1 ip6-allnodes" >> /etc/hosts
 echo "ff02::2 ip6-allrouters" >> /etc/hosts
 
-# Hostname, create snakoil cert
-sudo hostname $VPS_HOST_FQDN
+# Update snakoil cert
+sudo apt install -y ssl-cert
 sudo make-ssl-cert generate-default-snakeoil --force-overwrite
 
 # Smtp
