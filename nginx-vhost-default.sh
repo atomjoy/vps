@@ -29,6 +29,9 @@ server {
 }
 " > "/etc/nginx/sites-available/default"
 
+# Certs
+sudo apt install ssl-cert
+
 # Chmods
 sudo chown -R www-data:www-data /etc/nginx/sites-available
 sudo chmod -R 2775 /etc/nginx/sites-available
