@@ -4,13 +4,17 @@
 
 # Domain host
 DOMAIN="example.com"
+
 # SSL certs
 SSL_CERT="/etc/ssl/certs/ssl-cert-snakeoil.pem"
 SSL_KEY="/etc/ssl/private/ssl-cert-snakeoil.key"
+
 # Redirect to page with www.
 SSL_WITH_WWW=false
+
 # File max upload size
 MAX_UPLOAD_MB=100
+
 # Allow edit /var/www to user
 WWW_USER="debain"
 
