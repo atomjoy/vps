@@ -53,6 +53,9 @@ sudo bash remove-sudo-user.sh
 
 ## Połączenia i certyfikaty
 ```sh
+# Certyfikat snakeoil
+sudo apt install ssl-cert
+
 # Aktualizacja certyfikatu snakeoil
 sudo make-ssl-cert generate-default-snakeoil --force-overwrite
 
