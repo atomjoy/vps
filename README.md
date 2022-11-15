@@ -1,6 +1,12 @@
 # Konfiguracja serwera VPS z sytemem Debian 11
 Konfiguracja serwera VPS Debian 11 z ovh (LEMP, Letsencrypt certbot, logowanie z kluczami ssh, serwer smtp do wysyłania wiadomości email, ufw firewall).
 
+## Pobierz z git
+```sh
+sudo apt install git
+git clone https://github.com/atomjoy/vps.git
+```
+
 ## Uruchom jako root
 ```sh
 # Utwórz hasło root
