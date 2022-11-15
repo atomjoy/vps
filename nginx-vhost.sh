@@ -36,7 +36,7 @@ server {
   root /var/www/${DOMAIN}/public;  
   location ^~ /.well-known/acme-challenge/ {
     default_type "text/plain";
-    try_files $uri =404;
+    try_files \$uri =404;
   }
   # Redirect ssl
   return 301 https://${TO_HOST}\$request_uri;
