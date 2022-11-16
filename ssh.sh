@@ -40,6 +40,9 @@ GatewayPorts no
 PermitTunnel no
 PrintMotd no
 UseDNS no
+
+# Allow sftp client
+Subsystem sftp  /usr/lib/openssh/sftp-server
 " > /etc/ssh/sshd_config.d/debian.conf
 
 # Restart
