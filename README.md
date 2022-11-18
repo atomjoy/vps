@@ -59,6 +59,15 @@ Nie zapomij zmienić ustawienia w każdym skrypcie (variables) !!!
 sudo bash remove-sudo-user.sh
 ```
 
+## Hostname
+```bash
+# Hostname
+sudo hostnamectl set-hostname hello.example.com
+
+# Change hosts etc/hosts
+127.0.0.1 example.com hello.example.com hello localhost
+```
+
 ## Połączenia i certyfikaty
 ```sh
 # Certyfikat snakeoil
