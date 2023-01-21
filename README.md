@@ -98,4 +98,7 @@ echo "Test email `date`" | mail -s "Welcome today is `date`" your_email@gmail.co
 
 # Linux mailx
 echo "From test `date`" | mailx -s "From address test" -a 'From: Admin Root <root@example.com>' your_email@gmail.com
+
+# With bash MAILNAME=example.com
+echo "From test `date`" | mailx -s "Welcome message `date`" -a "From: Admin Root <root@${MAILNAME}>" $TESTMAIL
 ```
