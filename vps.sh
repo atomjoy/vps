@@ -16,8 +16,11 @@ SSH_PORT=22
 echo "Hostname"
 cp /etc/hosts /etc/hosts_copy
 sed -i "/${IP} ${MAILNAME} ${FQHOST} ${HOST}/d" /etc/hosts
+
+# Set default smtp mail domain (first host on list)
 echo "${IP} ${MAILNAME} ${FQHOST} ${HOST}" >> /etc/hosts
 echo "${MAILNAME}" >> /etc/mailname
+
 sudo hostnamectl set-hostname hello
 sudo hostname
 sudo hostname -f
