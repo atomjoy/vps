@@ -42,6 +42,7 @@ sed -i '/inet_interfaces/d' /etc/postfix/main.cf
 sed -i '/inet_protocols/d' /etc/postfix/main.cf
 echo "inet_interfaces = loopback-only" >> /etc/postfix/main.cf
 echo "inet_protocols = ipv4" >> /etc/postfix/main.cf
+echo "root: root" >> /etc/aliases
 sudo systemctl restart postfix
 
 echo "Send email"
