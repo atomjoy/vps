@@ -38,7 +38,7 @@ sudo apt upgrade -y
 echo "postfix postfix/mailname string ${MAILNAME}" | debconf-set-selections
 echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections
 sudo apt install -y postfix
-sudo systemctl reload postfix
+sudo systemctl restart postfix
 
 echo "Send email"
 echo "Sample email `date`" | mail -s "Welcome, vps test `date`" $TESTMAIL
