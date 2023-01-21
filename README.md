@@ -89,6 +89,11 @@ telnet localhost 25
  wget --no-check-certificate https://example.com
 ```
 
+## Usuń linię zawierającą tekst z pliku
+```sh
+sed -i '/inet_interfaces/d' /etc/postfix/main.cf
+```
+
 ## Wyślij email z cmd
 ```sh
 sudo apt install mailutils postfix
