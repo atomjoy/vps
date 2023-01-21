@@ -97,5 +97,5 @@ sudo apt install mailutils postfix
 echo "Test email `date`" | mail -s "Welcome today is `date`" your_email@gmail.com
 
 # Linux mailx
-echo "From test `date`" | mailx -s "From address test" -a 'From: "Admin Root" <root@example.com>' your_email@gmail.com
+echo "From test `date`" | mailx -s "From address test" -a 'From: Admin Root <root@example.com>' your_email@gmail.com
 ```
