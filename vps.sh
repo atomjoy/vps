@@ -26,18 +26,22 @@ sudo apt install openssl ca-certificates ssl-cert ufw -y
 sudo make-ssl-cert generate-default-snakeoil --force-overwrite
 sudo apt install net-tools dnsutils mailutils -y
 
-echo "Remove old"
+echo "Remove smtp"
 sudo apt -y --purge remove exim4-*
 sudo apt -y --purge remove postfix
-
 
 echo "Update install"
 sudo apt update -y
 sudo apt upgrade -y
 
+echo "Postfix"
 echo "postfix postfix/mailname string ${MAILNAME}" | debconf-set-selections
 echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections
 sudo apt install -y postfix
+sed -i '/inet_interfaces/d' /etc/postfix/main.cf
+sed -i '/inet_protocols/d' /etc/postfix/main.cf
+echo "inet_interfaces = loopback-only" >> /etc/postfix/main.cf
+echo "inet_protocols = ipv4" >> /etc/postfix/main.cf
 sudo systemctl restart postfix
 
 echo "Send email"
