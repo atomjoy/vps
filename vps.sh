@@ -15,7 +15,7 @@ SSH_PORT=22
 
 echo "Hostname"
 cp /etc/hosts /etc/hosts_copy
-echo "${IP} ${FQHOST} ${MAILNAME} ${HOST}" >> /etc/hosts
+echo "${IP} ${MAILNAME} ${FQHOST} ${HOST}" >> /etc/hosts
 echo "${MAILNAME}" >> /etc/mailname
 sudo hostnamectl set-hostname hello
 sudo hostname
