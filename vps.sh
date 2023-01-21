@@ -2,26 +2,24 @@
 
 # Zmiana hostname, instalacja firewall, file2ban i postfixa do wysyłania wiadomości email.
 
-TESTMAIL="atomjoy.official@gmail.com"
-MAILNAME="example.com"
-FQHOST="hello.example.com"
 HOST="hello"
+DOMAIN="example.com"
+TESTMAIL="email@example.com"
 IP="127.0.0.1"
-
-# Ssh port
 SSH_PORT=22
 # Allow only from ip range (1.0.0.0/8, 1.2.0.0/16, 1.2.3.0/24)
 # SSH_IP_MASK="1.2.0.0/16"
 
+echo "Config"
+FQHOST="${HOST}.${DOMAIN}"
+MAILNAME="${DOMAIN}"
+
 echo "Hostname"
 cp /etc/hosts /etc/hosts_copy
-sed -i "/${IP} ${FQHOST} ${MAILNAME} ${HOST}/d" /etc/hosts
-
-# Set default smtp mail domain (first host on list)
-echo "${IP} ${FQHOST} ${MAILNAME} ${HOST}" >> /etc/hosts
+sed -i "/${IP} ${FQHOST} ${HOST}/d" /etc/hosts
+echo "${IP} ${FQHOST} ${HOST}" >> /etc/hosts
 echo "${MAILNAME}" >> /etc/mailname
-
-sudo hostnamectl set-hostname hello
+sudo hostnamectl set-hostname $HOST
 sudo hostname
 sudo hostname -f
 
