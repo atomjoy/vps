@@ -37,6 +37,7 @@ sudo apt update -y
 sudo apt upgrade -y
 
 echo "Postfix"
+echo "root: root" >> /etc/aliases
 echo "postfix postfix/mailname string ${MAILNAME}" | debconf-set-selections
 echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections
 sudo apt install -y postfix
@@ -44,7 +45,6 @@ sed -i '/inet_interfaces/d' /etc/postfix/main.cf
 sed -i '/inet_protocols/d' /etc/postfix/main.cf
 echo "inet_interfaces = loopback-only" >> /etc/postfix/main.cf
 echo "inet_protocols = ipv4" >> /etc/postfix/main.cf
-echo "root: root" >> /etc/aliases
 sudo systemctl restart postfix
 
 echo "Send email"
