@@ -47,6 +47,7 @@ sudo systemctl restart postfix
 
 echo "Send email"
 echo "Sample email `date`" | mail -s "Welcome, vps test `date`" $TESTMAIL
+echo "Smtp test message `date`" | mailx -s "Welcome message `date`" -a "From: Admin Root <root@${MAILNAME}>" $TESTMAIL
 
 echo "Ufw"
 sudo ufw --force disable
