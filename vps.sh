@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Zmiana hostname, instalacja firewall i postfixa do wysyłania wiadomości email.
+# Zmiana hostname, instalacja firewall, file2ban i postfixa do wysyłania wiadomości email.
 
 TESTMAIL="atomjoy.official@gmail.com"
 MAILNAME="example.com"
@@ -59,6 +59,11 @@ sudo ufw allow proto tcp to 0.0.0.0/0 port $SSH_PORT
 # Enable
 sudo ufw --force enable
 sudo ufw status numbered
+
+# Fail2ban conf
+sudo apt install fail2ban -y
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+sudo service fail2ban restart
 
 echo "Clean"
 sudo apt autoremove -y
