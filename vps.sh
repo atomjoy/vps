@@ -18,7 +18,7 @@ echo "Hostname"
 cp /etc/hosts /etc/hosts_copy
 sed -i "/${IP} ${FQHOST} ${HOST}/d" /etc/hosts
 echo "${IP} ${FQHOST} ${HOST}" >> /etc/hosts
-echo "${MAILNAME}" >> /etc/mailname
+echo "${MAILNAME}" > /etc/mailname
 sudo hostnamectl set-hostname $HOST
 sudo hostname
 sudo hostname -f
@@ -71,6 +71,15 @@ sudo ufw status numbered
 # Fail2ban conf
 sudo apt install fail2ban -y
 sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+echo "
+[sshd]
+enabled = true
+port = ssh
+action = iptables-multiport
+logpath = /var/log/secure
+maxretry = 3
+bantime = 600
+" > /etc/fail2ban/jail.d/defaults-debian.conf
 sudo service fail2ban restart
 
 echo "Clean"
