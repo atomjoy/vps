@@ -7,6 +7,13 @@ sudo apt install git
 git clone https://github.com/atomjoy/vps.git
 ```
 
+## Strefa DNS
+```
+Utwórz recordy A w strefie DNS dla hostów swojej domeny (certbot ssl):
+hello.example.com 
+www.hello.example.com
+```
+
 ## Uruchom jako root
 ```sh
 # Utwórz hasło root
