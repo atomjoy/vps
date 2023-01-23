@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Variables
+# Create first dns A records for domain hosts hello.example.com and www.hello.example.com
 
 # Domain host
 DOMAIN=example.com
