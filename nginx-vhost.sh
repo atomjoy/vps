@@ -42,8 +42,10 @@ server {
     default_type "text/plain";
     try_files \$uri =404;
   }
-  # Redirect ssl
-  return 301 https://${TO_HOST}\$request_uri;
+  location / {
+    # Redirect ssl
+    return 301 https://${TO_HOST}\$request_uri;
+  }
 }
 " > "/etc/nginx/sites-enabled/${DOMAIN}.conf"
 
@@ -127,6 +129,7 @@ sudo mkdir -p "/var/www/${DOMAIN}/public/.well-known/acme-challenge"
 # Add index page
 echo "Html Works ..." > "/var/www/${DOMAIN}/public/index.html"
 echo "<?php echo 'Php Works ...';" > "/var/www/${DOMAIN}/public/index.php"
+echo "Webroot certs ..." > "/var/www/${DOMAIN}/public/.well-known/acme-challenge/index.html"
 
 # Chmods
 sudo chown -R www-data:www-data /etc/nginx/sites-enabled
